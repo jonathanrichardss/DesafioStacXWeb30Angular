@@ -1,0 +1,12 @@
+<div class="homePage">
+    <app-header></app-header>
+    <h1>Olá, o meu nome é <strong>Jonathan Richard Souza Santos</strong> e eu sou Desenvolvedor Front-end, <br><strong>Tecnologias que eu tenho experiência:</strong></h1>
+    <div class="cardContent">
+        <app-list-iterator *ngFor="let item of tecList" [textolist]="tecList"></app-list-iterator>
+    </div>
+    <div>
+        <app-button-lang *ngFor="let item of translates" (changeLang)="onChangeLang($event)"></app-button-lang>
+    </div>
+</div>
+
+
