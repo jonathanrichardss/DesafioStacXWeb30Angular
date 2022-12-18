@@ -15,8 +15,8 @@ export class HomeComponent {
   elemento = ''
 
   tecList = [
-    "Javascript","React",'Vue js','Tailwind CSS','Styled Components','Saas',"Node",'TypeScript',"Angular","Java"
-  ];
+    'Javascript','React','Vue js','Tailwind CSS','Styled Components','Saas','Node','TypeScript','Angular','Java'
+  ]
 
   lang = [
     {

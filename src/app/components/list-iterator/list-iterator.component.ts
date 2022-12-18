@@ -7,6 +7,6 @@ import { Component, Input } from '@angular/core';
 })
 export class ListIteratorComponent {
 
- @Input() textolist!: string[];
+ @Input() textolist!: string;
 
 }
