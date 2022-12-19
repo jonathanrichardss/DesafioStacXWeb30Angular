@@ -1,12 +1,16 @@
 <div class="homePage">
     <app-header></app-header>
-    <h1>Olá, o meu nome é <strong>Jonathan Richard Souza Santos</strong> e eu sou Desenvolvedor Front-end, <br><strong>Tecnologias que eu tenho experiência:</strong></h1>
+    <h1>{{selected}}</h1>
     <div class="cardContent">
-        <app-list-iterator *ngFor="let elemento of tecList" [textolist]="elemento"></app-list-iterator>
+        <div class="listContainer">
+            <ul>
+                <li *ngFor="let elemento of textolist">{{elemento}}</li>
+            </ul>
+        </div>
     </div>
-    <div>
-        <app-button-lang *ngFor="let item of translates" (changeLang)="onChangeLang($event)"></app-button-lang>
-    </div>
+    <footer>
+        <app-button-lang *ngFor="let lang of translates" [translates]="lang" (changeLang)="onChangeLang($event)"></app-button-lang>
+    </footer>
 </div>
 
 

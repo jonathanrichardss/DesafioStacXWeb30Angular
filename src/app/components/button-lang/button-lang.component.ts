@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-button-lang',
@@ -6,22 +6,16 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./button-lang.component.sass']
 })
 
-export class ButtonLangComponent implements OnInit {
+export class ButtonLangComponent {
 
 
-   // Iremos receber a propriedade de item passada como props para o botao e tipar a mesma
+  
    @Input() translates!: { content: string; image: string; metodo: () => void };
 
-   @Output() changeLang: EventEmitter<any> = new EventEmitter();
+   @Output() changeLang = new EventEmitter();
  
    handleClick(): void {
-     //Passando um certo dados do item (filho ) para o pai (App)
      this.changeLang.emit(this.translates.content);
-
    }
-
-   ngOnInit(): void {
-    throw new Error('Method not implemented.');
-  }
 
 }

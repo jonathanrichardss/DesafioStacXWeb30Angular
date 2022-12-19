@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input} from '@angular/core';
 
 @Component({
   selector: 'app-home',
@@ -7,47 +7,38 @@ import { Component } from '@angular/core';
 })
 export class HomeComponent {
 
-  content: string = 'joao'
-  image: string = ''
+  @Input() textolist!: string[];
 
-  listateste = ['ai', 'meu', 'Deus', 'oq', 'ta', 'acontecendo'];
-  
-  elemento = ''
-
-  tecList = [
-    'Javascript','React','Vue js','Tailwind CSS','Styled Components','Saas','Node','TypeScript','Angular','Java'
-  ]
+  @Input() selected!: string;
 
   lang = [
     {
       en: "Hello, my name is Jonathan Richard and I am a Front-End Developer, Technologies that I have experience:",
       pt: "Olá, meu nome é Jonathan Richard e eu sou Desenvolvedor Front-End, Tecnologias que tenho experiência:",
-      es: "Hola, mi nombre es Jonathan Richard y soy Desarrollador Front-End, Tecnologías en las que tengo experiencia:",
+      es: "Hola, mi nombre es Jonathan Richard y soy Desarrollador Front-End, Tecnologías en las que tengo experiencia:"
     },
   ];
 
   translates = [
     {
-      name: "Brasil",
-      flag: "../../../assets/images/brazil.png",
-      metodo: () => (this.selected = this.lang[0].pt),
+      content: "Português",
+      image: "../../../assets/public/icons/brazil.png",
+      metodo: () => (this.selected = this.lang[0].pt)
     },
     {
-      name: "Espanhol",
-      flag: "../../../assets/images/spain.png",
-      metodo: () => (this.selected = this.lang[0].es),
+      content: "Espanhol",
+      image: "../../../assets/public/icons/spain 2.png",
+      metodo: () => (this.selected = this.lang[0].es)
     },
     {
-      name: "Inglês",
-      flag: "../../../assets/images/united-states.png",
-      metodo: () => (this.selected = this.lang[0].en),
+      content: "Inglês",
+      image: "../../../assets/public/icons/united-states.png",
+      metodo: () => (this.selected = this.lang[0].en, console.log('entrou no metodo'))
     },
   ];
 
-  selected = this.lang[0].pt;
-
   onChangeLang($event: string) {
-    if ($event == "Brasil") {
+    if ($event == "Português") {
       this.translates[0].metodo();
     } else if ($event == "Espanhol") {
       this.translates[1].metodo();

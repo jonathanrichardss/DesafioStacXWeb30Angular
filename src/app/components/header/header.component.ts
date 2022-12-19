@@ -7,5 +7,4 @@ import { Component } from '@angular/core';
 })
 export class HeaderComponent {
 
-  listateste = ['UM', 'DOIS', 'TRES', 'QUATRO', 'CINCO'];
 }
